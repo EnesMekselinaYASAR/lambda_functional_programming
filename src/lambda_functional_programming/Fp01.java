@@ -1,6 +1,7 @@
 package lambda_functional_programming;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Fp01 {
@@ -48,6 +49,16 @@ public class Fp01 {
         getMaxEleman(liste);
         System.out.println("");
         getMAxEleman02(liste);
+        System.out.println("");
+        getMinEleman(liste);
+        System.out.println("");
+        getMinEleman02(liste);
+        System.out.println("");
+        getYedidenBuyukCiftMin(liste);
+        System.out.println("");
+        getYedidenBuyukCiftMin02(liste);
+        System.out.println("");
+        getYedidenBuyukCiftMin03(liste);
 
     }
         /*
@@ -144,12 +155,45 @@ public class Fp01 {
     }
     public static void getMAxEleman02(List<Integer> list) {
         Integer max = list.stream().distinct().sorted().reduce(Integer.MIN_VALUE, (t, u) -> u);
-        System.out.print(max + " ");
+        System.out.print(max);// 131
     }
 
     /*
     8- )List elemanları arasından en küçük değeri bulan bir method oluşturun.(2 Yol ile)
      */
+
+    public static void getMinEleman(List<Integer>list) {
+        Integer min = list.stream().distinct().reduce(Integer.MAX_VALUE, (t, u) -> t < u ? t : u);
+        System.out.print("getMinEleman:"+min); // 2
+    }
+    public static void getMinEleman02(List<Integer>list){
+        Integer min= list.stream().distinct().sorted().reduce(Integer.MAX_VALUE, (t,u)-> t < u ? t : u);
+        System.out.print(min); // 2
+    }
+
+     /*
+    9- ) List elemanları arasından 7'den büyük, çift, en küçük değeri bulan bir
+    method oluşturun.
+     */
+    // 1.yol;
+    public static void getYedidenBuyukCiftMin(List<Integer>list){
+        Integer min=list.stream().distinct().filter(t->t%2==0).filter(t->t>7).reduce(Integer.MAX_VALUE, (t,u)->t<u ? t : u);
+        System.out.print("yedidenbuyukcift min:"+min); // yedidenbuyukcift min:8
+    }
+    // 2.yol;
+    public static void getYedidenBuyukCiftMin02(List<Integer>list){
+        Integer min=list.stream().distinct().filter(t->t%2==0).filter(t->t>7).sorted(Comparator.reverseOrder()).reduce(Integer.MAX_VALUE,(t,u)->u);
+        System.out.print(min); // 8
+    }
+
+    // 3.yol;
+
+    public static void getYedidenBuyukCiftMin03(List<Integer>list){
+        Integer min=list.stream().filter(t->t%2==0).filter(t->t>7).sorted(Comparator.reverseOrder()).reduce(Integer.MAX_VALUE,(t,u)->u);
+        System.out.println(min); // 8
+    }
+
+
 
 
 
