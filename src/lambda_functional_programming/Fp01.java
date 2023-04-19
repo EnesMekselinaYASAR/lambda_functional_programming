@@ -42,6 +42,8 @@ public class Fp01 {
         tekrarsizTekElemanlarinKupunuYazdir(liste);
         System.out.println("");
         tekrarsizCiftElemanlarinKareToplami(liste);
+        System.out.println("");
+        tekrarsizCiftElamanlarinKupleriCarpimi(liste);
 
     }
         /*
@@ -116,14 +118,17 @@ public class Fp01 {
 
     public static void tekrarsizCiftElemanlarinKareToplami(List<Integer>list){
         Integer toplam=list.stream().distinct().filter(t->t%2==0).map(t->t*t).reduce(0,(t,u)->t+u);
-        System.out.println(toplam); // 168
+        System.out.print(toplam); // 168
     }
 
      /*
     6- ) Tekrarsız çift elemanların küpünün çarpımını hesaplayan bir method oluşturun.
      */
 
-    public static
+    public static void tekrarsizCiftElamanlarinKupleriCarpimi(List<Integer>list){
+        Integer carpim=list.stream().distinct().filter(t->t%2==0).map(t->t*t*t).reduce(1,(t,u)->t*u);
+        System.out.print(carpim); // 4096000
+    }
 
 
 
