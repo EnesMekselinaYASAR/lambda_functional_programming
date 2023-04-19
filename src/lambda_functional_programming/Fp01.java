@@ -46,6 +46,8 @@ public class Fp01 {
         tekrarsizCiftElamanlarinKupleriCarpimi(liste);
         System.out.println("");
         getMaxEleman(liste);
+        System.out.println("");
+        getMAxEleman02(liste);
 
     }
         /*
@@ -140,6 +142,16 @@ public class Fp01 {
         Integer max=list.stream().distinct().reduce(Integer.MIN_VALUE,(t,u)->t>u ? t :u);
         System.out.print(max); // 131
     }
+    public static void getMAxEleman02(List<Integer> list) {
+        Integer max = list.stream().distinct().sorted().reduce(Integer.MIN_VALUE, (t, u) -> u);
+        System.out.print(max + " ");
+    }
+
+    /*
+    8- )List elemanları arasından en küçük değeri bulan bir method oluşturun.(2 Yol ile)
+     */
+
+
 
 
 
