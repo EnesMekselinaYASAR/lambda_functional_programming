@@ -44,6 +44,8 @@ public class Fp01 {
         tekrarsizCiftElemanlarinKareToplami(liste);
         System.out.println("");
         tekrarsizCiftElamanlarinKupleriCarpimi(liste);
+        System.out.println("");
+        getMaxEleman(liste);
 
     }
         /*
@@ -128,6 +130,15 @@ public class Fp01 {
     public static void tekrarsizCiftElamanlarinKupleriCarpimi(List<Integer>list){
         Integer carpim=list.stream().distinct().filter(t->t%2==0).map(t->t*t*t).reduce(1,(t,u)->t*u);
         System.out.print(carpim); // 4096000
+    }
+
+    /*
+    7- ) List elemanları arasından en büyük değeri bulan bir method oluşturun.
+     */
+
+    public static void getMaxEleman(List<Integer>list){
+        Integer max=list.stream().distinct().reduce(Integer.MIN_VALUE,(t,u)->t>u ? t :u);
+        System.out.print(max); // 131
     }
 
 
