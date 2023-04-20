@@ -3,6 +3,7 @@ package lambda_functional_programming;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fp01 {
 
@@ -59,6 +60,8 @@ public class Fp01 {
         getYedidenBuyukCiftMin02(liste);
         System.out.println("");
         getYedidenBuyukCiftMin03(liste);
+        System.out.println("");
+        getTersSıralamaylaTekrarsizElemanlarinYarisi(liste);
 
     }
         /*
@@ -189,8 +192,24 @@ public class Fp01 {
     // 3.yol;
 
     public static void getYedidenBuyukCiftMin03(List<Integer>list){
-        Integer min=list.stream().filter(t->t%2==0).filter(t->t>7).sorted(Comparator.reverseOrder()).reduce(Integer.MAX_VALUE,(t,u)->u);
-        System.out.println(min); // 8
+        Integer min=list.
+                stream().
+                filter(t->t%2==0).
+                filter(t->t>7).
+                sorted().
+                findFirst().
+                get();
+        System.out.print(min); // 8
+    }
+
+     /*
+    10- ) Ters sıralama ile tekrarsız ve 5'ten büyük elemanların yarı değerlerini
+    (elamanın ikiye bölüm sonucunu) bulan bir method oluşturun.
+     */
+
+    public static void getTersSıralamaylaTekrarsizElemanlarinYarisi(List<Integer>list){
+        List<Double> sonuc=list.stream().distinct().filter(t->t>5).map(t->t/2.0).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println(sonuc); // [65.5, 5.0, 4.5, 4.0]
     }
 
 
