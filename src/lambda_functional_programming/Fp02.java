@@ -70,7 +70,9 @@ public class Fp02 {
    4- ) Ardışık tek list elemanlarının küplerini tekrarsız olarak aynı satırda
    aralarında boşluk bırakarak yazdıran bir method oluşturun.
     */
+
     public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list){
         list.stream().distinct().filter(Utils::tekElemanlariSec).map(Utils::kupunuAl).forEach(Utils::aynıSatirdaBosluklaYAzdir);
+
     }
 }
