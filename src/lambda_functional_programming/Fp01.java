@@ -169,6 +169,7 @@ public class Fp01 {
         Integer min = list.stream().distinct().reduce(Integer.MAX_VALUE, (t, u) -> t < u ? t : u);
         System.out.print("getMinEleman:"+min); // 2
     }
+
     public static void getMinEleman02(List<Integer>list){
         Integer min= list.stream().distinct().sorted().reduce(Integer.MAX_VALUE, (t,u)-> t < u ? t : u);
         System.out.print(min); // 2
@@ -183,6 +184,7 @@ public class Fp01 {
         Integer min=list.stream().distinct().filter(t->t%2==0).filter(t->t>7).reduce(Integer.MAX_VALUE, (t,u)->t<u ? t : u);
         System.out.print("yedidenbuyukcift min:"+min); // yedidenbuyukcift min:8
     }
+
     // 2.yol;
     public static void getYedidenBuyukCiftMin02(List<Integer>list){
         Integer min=list.stream().distinct().filter(t->t%2==0).filter(t->t>7).sorted(Comparator.reverseOrder()).reduce(Integer.MAX_VALUE,(t,u)->u);
