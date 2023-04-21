@@ -190,7 +190,6 @@ public class Fp01 {
     }
 
     // 3.yol;
-
     public static void getYedidenBuyukCiftMin03(List<Integer>list){
         Integer min=list.
                 stream().
