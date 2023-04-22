@@ -20,7 +20,6 @@ public class Utils {
         return x*x;
     }
 
-
     public static int kupunuAl(int x){
         return x*x*x;
     }
