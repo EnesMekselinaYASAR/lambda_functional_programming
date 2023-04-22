@@ -36,6 +36,8 @@ public class Fp02 {
 
 
 
+
+
     }
 
     /*
@@ -54,6 +56,7 @@ public class Fp02 {
         list.stream().filter(Utils::ciftElemanlariSec).forEach(Utils::aynıSatirdaBosluklaYAzdir);
     }
 
+
     /*
     3) Ardışık tek list elemanlarının karelerini aynı satırda aralarında
     boşluk bırakarak yazdıran bir method oluşturun.(Functional)
@@ -65,6 +68,7 @@ public class Fp02 {
                 map(Utils::karesiniAl).
                 forEach(Utils::aynıSatirdaBosluklaYAzdir);
     }
+
 
     /*
    4- ) Ardışık tek list elemanlarının küplerini tekrarsız olarak aynı satırda
