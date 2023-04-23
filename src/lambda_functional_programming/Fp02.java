@@ -32,7 +32,13 @@ public class Fp02 {
         System.out.println("");
         tekElemanlarinKareleriniYazdir(l); // 81 17161 81
         System.out.println("");
-        tekrarsizTekElemanlarinKupunuYazdir(l);
+        tekrarsizTekElemanlarinKupunuYazdir(l);// 729 2248091
+        System.out.println("");
+        tekrarsizCiftElemanlarinKareToplami01(l);// 168
+        System.out.println("");
+        tekrarsizCiftElemanlarinKareToplami02(l);// 168
+        System.out.println("");
+        tekrarsizCiftElemanlarinKareToplami03(l);// 168
 
 
 
@@ -76,6 +82,23 @@ public class Fp02 {
     */
     public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list){
         list.stream().distinct().filter(Utils::tekElemanlariSec).map(Utils::kupunuAl).forEach(Utils::aynıSatirdaBosluklaYAzdir);
+    }
 
+    /*
+    5- ) Tekrarsız çift elemanların karelerinin toplamını hesaplayan bir method oluşturun.
+     */
+    public static void tekrarsizCiftElemanlarinKareToplami01(List<Integer> list){
+        Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(0,Math::addExact);
+        System.out.print(toplam);
+    }
+
+    public static void tekrarsizCiftElemanlarinKareToplami02(List<Integer> list){
+        Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(Math::addExact).get();
+        System.out.print(toplam);
+    }
+
+    public static void tekrarsizCiftElemanlarinKareToplami03(List<Integer> list){
+        Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(0,Integer::sum);
+        System.out.print(toplam);
     }
 }
