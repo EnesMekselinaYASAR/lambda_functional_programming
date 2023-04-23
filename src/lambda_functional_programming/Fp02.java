@@ -39,6 +39,15 @@ public class Fp02 {
         tekrarsizCiftElemanlarinKareToplami02(l);// 168
         System.out.println("");
         tekrarsizCiftElemanlarinKareToplami03(l);// 168
+        System.out.println("");
+        tekrarsizCiftElemanlarinKuplerininCarpimi(l); // 4096000
+        System.out.println("");
+        getMaxEleman(l); // 131
+        System.out.println("");
+        getMinEleman(l); // 2
+        System.out.println("");
+        yedidenBuyukCiftMin(l); // 8
+        System.out.println("");
 
 
 
@@ -87,18 +96,65 @@ public class Fp02 {
     /*
     5- ) Tekrarsız çift elemanların karelerinin toplamını hesaplayan bir method oluşturun.
      */
+
+    // 1.yol;
     public static void tekrarsizCiftElemanlarinKareToplami01(List<Integer> list){
         Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(0,Math::addExact);
         System.out.print(toplam);
     }
 
+    // 2.yol;
     public static void tekrarsizCiftElemanlarinKareToplami02(List<Integer> list){
         Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(Math::addExact).get();
         System.out.print(toplam);
     }
 
+    // 3.yol;
     public static void tekrarsizCiftElemanlarinKareToplami03(List<Integer> list){
         Integer toplam=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::karesiniAl).reduce(0,Integer::sum);
         System.out.print(toplam);
     }
+
+    /*
+    6- ) Tekrarsız çift elemanların küpünün çarpımını hesaplayan bir method oluşturun.
+     */
+    public static void tekrarsizCiftElemanlarinKuplerininCarpimi(List<Integer>list){
+        Integer carpim=list.stream().distinct().filter(Utils::ciftElemanlariSec).map(Utils::kupunuAl).reduce(1,Math::multiplyExact);
+        System.out.print(carpim);
+    }
+    /*
+    7- ) List elemanları arasından en büyük değeri bulan bir method oluşturun.
+     */
+    public static void getMaxEleman(List<Integer>list){
+        Integer max=list.stream().distinct().reduce(Math::max).get();
+        System.out.print(max);
+    }
+
+    /*
+    8- )List elemanları arasından en küçük değeri bulan bir method oluşturun.
+    (Method Reference)
+     */
+
+    public static void getMinEleman(List<Integer>list){
+        Integer min=list.stream().distinct().reduce(Math::min).get();
+        System.out.print(min);
+    }
+
+    /*
+    9- ) List elemanları arasından 7'den büyük, çift, en küçük değeri bulan bir method oluşturun.
+     */
+    public static void yedidenBuyukCiftMin(List<Integer>list){
+        Integer min=list.stream().distinct().filter(t->t>7).filter(Utils::ciftElemanlariSec).reduce(Math::min).get();
+        System.out.print(min);
+    }
+
+    /*
+    10) Ters sıralama ile tekrarsız ve 5'ten büyük elemanların yarı değerlerini
+    (elamanın ikiye bölüm sonucunu) bulan bir method oluşturun.
+     */
+    public static void tersSiralamaylaTekrarsizElemanlarinYarisi(List<Integer> list){
+
+    }
+
+
 }
