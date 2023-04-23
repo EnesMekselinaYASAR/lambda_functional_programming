@@ -26,4 +26,9 @@ public class Utils {
         return x*x*x;
     }
 
+    public static double yarisiniAl(int x){
+
+        return x/2.0;
+    }
+
 }

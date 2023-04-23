@@ -1,7 +1,9 @@
 package lambda_functional_programming;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fp02 {
         /*
@@ -48,10 +50,7 @@ public class Fp02 {
         System.out.println("");
         yedidenBuyukCiftMin(l); // 8
         System.out.println("");
-
-
-
-
+        tersSiralamaylaTekrarsizElemanlarinYarisi(l); // [65.5, 5.0, 4.5, 4.0]
 
     }
 
@@ -134,7 +133,6 @@ public class Fp02 {
     8- )List elemanları arasından en küçük değeri bulan bir method oluşturun.
     (Method Reference)
      */
-
     public static void getMinEleman(List<Integer>list){
         Integer min=list.stream().distinct().reduce(Math::min).get();
         System.out.print(min);
@@ -153,6 +151,14 @@ public class Fp02 {
     (elamanın ikiye bölüm sonucunu) bulan bir method oluşturun.
      */
     public static void tersSiralamaylaTekrarsizElemanlarinYarisi(List<Integer> list){
+        List<Double> sonuc=list.
+                stream(). //Gerekli methodları kullanmamızı sağlar
+                distinct(). //Tekrarlı olanları almaz
+                filter(t->t>5). //Koşula göre filtreleme yapar
+                map(Utils::yarisiniAl). //Her bir elemanın değerini değiştirmeye yarar
+                sorted(Comparator.reverseOrder()). //Sıralama yapar
+                collect(Collectors.toList()); //Elamanları collection'a çevirir.
+        System.out.print(sonuc);
 
     }
 
