@@ -59,14 +59,7 @@ public class Fp03 {
     /*
    2- ) Elemanları uzunluklarına göre sıralayıp yazdıran bir method oluşturun.
     */
-    public static void uzunlugaGoreYazdir(List<String> list) {
 
-        list.
-                stream().
-                sorted(Comparator.comparing(String::length)).
-                forEach(Utils::aynıSatirdaBosluklaYAzdir);
-        // Comparator.comparing(); --> siralama kosulunu belirtmek icin kullanilir
-    }
 
     /*
     3- ) Elemanları uzunluklarına göre ters sıralayıp yazdıran bir method oluşturun.
