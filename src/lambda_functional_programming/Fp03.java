@@ -161,6 +161,11 @@ public class Fp03 {
     /*
     11- ) Herhangi bir elemanın 'r' ile bitip bitmediğini kontrol eden bir method oluşturun.
      */
+    public static boolean rIleBitiyorMu(List<String> list){
+        return list.
+                stream().
+                anyMatch(t->t.endsWith("r") || t.endsWith("R"));
+    }
 
 
 }
