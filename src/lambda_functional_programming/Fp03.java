@@ -104,7 +104,8 @@ public class Fp03 {
     6- ) Uzunluğu 5'ten büyük olan elemanları silen bir method oluşturun.
 
     public static void bestenBuyukleriSil(List<String> list) {
-        list.removeIf(t->t.length()>5);
+        list.
+        removeIf(t->t.length()>5);
         System.out.print(list);
         Listemizi degistiriyor. Biz bu sekilde olmasini istemiyoruz.
         List mutable oldugu icin elemanlari işlem sonrasi kalici degistiginden
@@ -116,7 +117,8 @@ public class Fp03 {
     7- ) ‘A’, ‘a’ ile başlayan yada ‘N’, ‘n’ ile biten elemanları silen bir method oluşturun.
      */
     /*public static void baslagiciAYadaSonuNOlaniSil01(List<String> list) { // 1. YOL
-        list.removeIf(t -> t.charAt(0) == 'A' || t.charAt(0) == 'a' || t.charAt(t.length() - 1) == 'N' || t.charAt(t.length() - 1) == 'n');
+        list.
+        removeIf(t -> t.charAt(0) == 'A' || t.charAt(0) == 'a' || t.charAt(t.length() - 1) == 'N' || t.charAt(t.length() - 1) == 'n');
         System.out.println(list);*/
         /*Listemizi degistiriyor. Biz bu sekilde olmasini istemiyoruz.
         List mutable oldugu icin elemanlari işlem sonrasi kalici degistiginden
@@ -124,7 +126,8 @@ public class Fp03 {
     }*/
 
    /* public static void baslagiciAYadaSonuNOlaniSil02(List<String> list) { // 2. YOL
-        list.removeIf(t -> t.startsWith("A") || t.startsWith("a") || t.endsWith("N") || t.endsWith("n"));
+        list.
+        removeIf(t -> t.startsWith("A") || t.startsWith("a") || t.endsWith("N") || t.endsWith("n"));
         System.out.print(list);
         }*/
         /*Listemizi degistiriyor. Biz bu sekilde olmasini istemiyoruz.
@@ -135,7 +138,8 @@ public class Fp03 {
     8- ) Uzunluğu 8 ile 10 arası olan yada 'o' ile biten elemanları yazdıran bir method oluşturun.
      */
     /*public static void uzunlugu8ile10ArasiVeOIleBiteniSil(List<String> list) {
-        list.removeIf(t -> (t.length() > 7 && t.length() < 11) || t.endsWith("O") || t.endsWith("o"));
+        list.
+        removeIf(t -> (t.length() > 7 && t.length() < 11) || t.endsWith("O") || t.endsWith("o"));
         System.out.println(list);
     }
         *//*Listemizi degistiriyor. Biz bu sekilde olmasini istemiyoruz.
@@ -155,7 +159,9 @@ public class Fp03 {
    10- ) Hiçbir elemanın 'X' ile başlamadığını kontrol eden bir method oluşturun.
     */
     public static boolean xIleBaslamiyorMu(List<String> list){
-        return list.stream().noneMatch(t->t.startsWith("X") || t.startsWith("x"));
+        return list.
+                stream().
+                noneMatch(t->t.startsWith("X") || t.startsWith("x"));
     }
 
     /*
