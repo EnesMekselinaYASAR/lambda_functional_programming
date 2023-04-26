@@ -39,6 +39,7 @@ public class Fp05 {
     3- ) Ortalama puanı en yüksek olan kursu yazdırmak için bir yöntem oluşturun
      */
     public static String ortalamasiEnYuksekKursunAdiniYazdir(List<Courses> list){
+        return list.stream().sorted()
 
     }
 }
