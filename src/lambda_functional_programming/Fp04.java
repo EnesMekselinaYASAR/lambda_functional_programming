@@ -8,6 +8,8 @@ public class Fp04 {
         System.out.println(get7den100eToplam01()); // 5029
         System.out.println(get7den100eToplam02()); // 5029
         System.out.println(get2den11eCarpim()); // 39916800
+        System.out.println(faktoriyelHesapla(5)); // 120
+        System.out.println(verilenIkiSayiArasindakiCiftSayilarinToplami()); //
 
 
 
@@ -42,6 +44,22 @@ public class Fp04 {
     3- ) Verilen bir sayının faktoriyelini hesaplayan bir method oluşturun.
          (5 factorial = 1*2*3*4*5  ==> 5! = 1*2*3*4*5)
      */
-    public static int faktoriyelHesapla(int x)
+    public static int faktoriyelHesapla(int x){
+
+        if (x>0){
+            return IntStream.rangeClosed(1,x).reduce(Math::multiplyExact).getAsInt();
+        }
+        System.out.println("0'dan buyuk deger giriniz");
+        return 0;
+    }
+
+    /*
+   4- ) Verilen iki sayı arasındaki çift sayıların toplamını bulan bir method oluşturun.
+    */
+    public static int verilenIkiSayiArasindakiCiftSayilarinToplami(int x, int y){
+        return IntStream.rangeClosed(x,y).filter(Utils::ciftElemanlariSec).sum();
+    }
+
+
 
 }
