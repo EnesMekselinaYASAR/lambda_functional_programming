@@ -18,6 +18,8 @@ public class Fp05 {
         coursesList.add(courseEnglishNight);
 
         System.out.println("ortalamaPuanlarVerilenSayidanBuyukMu = " + ortalamaPuanlarVerilenSayidanBuyukMu(coursesList, 75)); // true
+        System.out.println(herhangiBirKursAdiKelimeyiIceriyorMu(coursesList,"Turkish")); // true
+
     }
     /*
     1- )Tüm ortalama puanların verilen sayıdan büyük olup olmadığını kontrol etmek için bir method oluşturun.
@@ -30,6 +32,13 @@ public class Fp05 {
     2- )Kurs adlarından en az birinin verilen kelimeyi içerip içermediğini kontrol etmek için bir method oluşturun
      */
     public static boolean herhangiBirKursAdiKelimeyiIceriyorMu(List<Courses> list, String kelime){
+        return list.stream().anyMatch(t->t.getCourseName().contains(kelime));
+    }
+
+    /*
+    3- ) Ortalama puanı en yüksek olan kursu yazdırmak için bir yöntem oluşturun
+     */
+    public static String ortalamasiEnYuksekKursunAdiniYazdir(List<Courses> list){
 
     }
 }
