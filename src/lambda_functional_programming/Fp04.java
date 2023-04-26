@@ -10,11 +10,7 @@ public class Fp04 {
         System.out.println(get2den11eCarpim()); // 39916800
         System.out.println(faktoriyelHesapla(5)); // 120
         System.out.println(verilenIkiSayiArasindakiCiftSayilarinToplami(11,5)); // 24
-        System.out.println(ikiSayiArasindakiTumSayilarinRakamlariToplami(23,32)); // 68
-
-
-
-
+        System.out.println(ikiSayiArasindakiTumSayilarinRakamlariToplami(32,23)); // 68
 
     }
     /*
@@ -75,9 +71,13 @@ public class Fp04 {
      23 and 32 ==> 2+3  +  2+4  +  2+5  +  2+6  +  2+7  +   2+8  +   2+9  +   3+0  +   3+1  +   3+2 ==> 68
      */
     public static int ikiSayiArasindakiTumSayilarinRakamlariToplami(int x, int y){
+        int z=0;
+        if (x>y){
+            z=x;
+            x=y;
+            y=z;
+        }
         return IntStream.rangeClosed(x,y).map(Utils::rakamlarToplaminiAl).sum();
     }
-
-
 
 }
