@@ -9,7 +9,10 @@ public class Fp04 {
         System.out.println(get7den100eToplam02()); // 5029
         System.out.println(get2den11eCarpim()); // 39916800
         System.out.println(faktoriyelHesapla(5)); // 120
-        System.out.println(verilenIkiSayiArasindakiCiftSayilarinToplami()); //
+        System.out.println(verilenIkiSayiArasindakiCiftSayilarinToplami(11,5)); // 24
+        System.out.println(ikiSayiArasindakiTumSayilarinRakamlariToplami(23,32)); // 68
+
+
 
 
 
@@ -57,7 +60,22 @@ public class Fp04 {
    4- ) Verilen iki sayı arasındaki çift sayıların toplamını bulan bir method oluşturun.
     */
     public static int verilenIkiSayiArasindakiCiftSayilarinToplami(int x, int y){
+        int z=0;
+        if (x>y){
+            z=x;
+            x=y;
+            y=z;
+        }
         return IntStream.rangeClosed(x,y).filter(Utils::ciftElemanlariSec).sum();
+    }
+
+    /*
+    5) Verilen iki sayı arasındaki tüm sayıların rakamlarının toplamını hesaplayan
+        bir method oluşturun.
+     23 and 32 ==> 2+3  +  2+4  +  2+5  +  2+6  +  2+7  +   2+8  +   2+9  +   3+0  +   3+1  +   3+2 ==> 68
+     */
+    public static int ikiSayiArasindakiTumSayilarinRakamlariToplami(int x, int y){
+        return IntStream.rangeClosed(x,y).map(Utils::rakamlarToplaminiAl).sum();
     }
 
 

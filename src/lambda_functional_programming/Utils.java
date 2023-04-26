@@ -39,4 +39,14 @@ public class Utils {
         return str.charAt(0);
     }
 
+    public static int rakamlarToplaminiAl(int x){
+        int toplam=0;
+        while (x>0){
+            toplam+=x%10;
+            x/=10;
+        }
+        return toplam;
+
+    }
+
 }
